@@ -1,11 +1,11 @@
 import express from 'express' // Com isso não utilizar o required
+import routes from './routes' // Pega a rota de routes/index.ts
 
 //Controla e acessar rotas, middleware e recursos
 const app = express();
 
-app.get('/', (request, response) => {
-	return response.json({message: 'Olá Dev'});
-});
+//Chama a rota e a executa
+app.use(routes);
 
 //método p/ configurar a porta de acesso da app, https://localhost:3333
 app.listen(3333, () => {
